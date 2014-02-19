@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+	<ModulePrefs title="ScrumPokerGame">
+		<Require feature="dynamic-height"/>
+		<Require feature="rpc" />
+	</ModulePrefs>
+  <Content type="html"><![CDATA[
+        <!DOCTYPE html>
+	<script type="text/javascript" src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+        <script type="text/javascript" src="//www.google.com/jsapi"></script>
+        <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+	<script type="text/javascript" src="https://dev-scrumpoker.appspot.com/js/scrumpoker.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://dev-scrumpoker.appspot.com/css/scrumpoker.css" />
+
+        <body>
+	        <div id="app-container">
+	        	<div id="effects-list" class="scrollBarInner" style="height:100%; padding-left:15px; font-size:14px">
+	        		<h3>Scrum Poker Game</h3>
+	        
+	        		<div id="cardsDiv">
+					</div>
+	
+	        		<div id="actions">
+					<a href="#" class="buttonCancel">Reset</a>
+					<a href="#" class="buttonAccept">Show the cards</a>
+	        		</div>
+	
+	        		<div id="participantsDiv">
+					</div>
+					<div id="averageDiv">
+					</div>	
+	
+	        	</div>
+	        </div>
+        </body>
+  
+  ]]></Content>
+</Module>
