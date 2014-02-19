@@ -2,9 +2,8 @@
 # PATHS
 TOPDIR?=$(shell pwd)
 BUILDDIR=$(TOPDIR)/build
-SCRIPTSDIR=$(TOPDIR)/scripts
 
-SOURCES+=scrumpoker.xml
+SOURCES+=
 SOURCES+=index.html
 SOURCES+=app.yaml
 
@@ -13,17 +12,16 @@ DIRS+=icons
 DIRS+=js
 DIRS+=images
 
+css:
+icons:
+images:
+
 # RULES
-clean:
-	@echo "+++ Cleaning...";
-	@rm -rf $(BUILDDIR);
-	@echo "+++ Cleaned";
-	
 build: clean
 	@echo "+++ Building up...";
 	test -d $(BUILDDIR) || mkdir $(BUILDDIR);
 	for subdir in $(DIRS); do \
-	  	cp -r $$subdir ${BUILDDIR}; \
+	  	make -C $$subdir; \
 	done
 	for src in $(SOURCES); do \
 		cp $$src ${BUILDDIR}; \
@@ -39,3 +37,8 @@ deploy_dev:
 	@echo "+++ Deployment of dev environment launched..."
 	appcfg.py update .
 	@echo "+++ Dev environment deployed"
+
+clean:
+	@echo "+++ Cleaning...";
+	@rm -rf $(BUILDDIR);
+	@echo "+++ Cleaned";
